@@ -6,4 +6,18 @@ system:
   availability: 0.53
 
 sheets:
-  
+  Availability:
+    sheet_name: "Availability"         
+    year_row: 3
+    month_row: 4
+    last_row: 28
+    start_column : 3
+    start_year: 2025
+    start_month: 1
+    data:
+      downtime_psys1:
+        row: 14
+      downtime_sys2:
+        row: 20
+      avg_availablitiy:
+        row: 25 
