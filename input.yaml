@@ -1,0 +1,14 @@
+downtime:
+  sys1_minutes: 0
+  sys2_minutes: 0
+filename: Template_Jan26.xlsx
+report_period:
+  date_end: 2026-02-28 00:00:00
+  date_start: 2026-02-01 00:00:00
+  year: 2026
+system:
+  availablitiy: 0.53
+values:
+  document_count: 2132
+  tenant_count: 23
+  storage: 2132.4

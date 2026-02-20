@@ -1,0 +1,9 @@
+workbook:
+  template_path: "input_template/"
+  output_path: "output/"
+
+system:
+  availability: 0.53
+
+sheets:
+  
