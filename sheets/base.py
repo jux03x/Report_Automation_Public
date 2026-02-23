@@ -1,5 +1,10 @@
 import copy 
 class BaseSheet:
+    """
+    Base class for standard sheet processing.
+    Handles deletion copying all data forward,
+    then puts in the new report data.
+    """
     def __init__(self, ws, sheet_config, input_data):
         self.ws = ws
         self.cfg = sheet_config
