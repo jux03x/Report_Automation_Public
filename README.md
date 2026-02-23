@@ -3,14 +3,53 @@ This public repository provides a template framework for automating table-based 
 
 Currently, the repository is configured for the example use case shown below. The actual Excel files are intentionally not included in the repository. Each upgrade to an Excel file would result in a new version, and excluding them keeps the repository lightweight and maintainable.
 
-From a cybersecurity perspective, the repository is safe to pull: the code contains only Python scripts, templates, and configuration files. Excel files are excluded because they can contain macros, which may execute arbitrary code and pose security risks. By keeping Excel files out of the public repo, users can safely use and extend the automation scripts without the risk of inadvertently executing malicious macros.
+From a cybersecurity perspective, the repository is safe to clone: the code contains only Python scripts, templates, and configuration files. Excel files are excluded because they can contain macros, which may execute arbitrary code and pose security risks. By keeping Excel files out of the public repo, users can safely use and extend the automation scripts without the risk of inadvertently executing malicious macros.
 
 Not that I would ever intentionally do something like this, but this approach makes the repository appear more trustworthy overall. 😊
+
+# Code Structure
+......
 
 -------------------------- How-To-Use, with the previously mentioned use case ----------------------------------
 
 # Getting Started
 
+1. Clone the Repository
+2. Use the Repository as it is (Skip to 3.) or customize the Repository for your required use case.
+- Keep the structure and the modularity.
+- Configure the Input (input.py & input.yaml).
+- Customize the config.yaml as needed.
+- Use utils or create new ones.
+- Keep interface.py & loader.py
+- Customize the base.py's and the sheet scripts as you neet them.
+- Call the new sheet scripts in the main.py.
+- > This can take some time, depending on the usecase. To change the usecase from the private Report_Automation repo to the usecase bellow this took around 1-2 hours, due to many similarities. 
+
+3. Start the Report Skript.
+ - Execute Main.py with the IDE of your choice.
+ - Or execute the script in the command line as shown below.
+ - > python must be installed, aswell as the used libraries.
+
+4. Open command line/ Power Shell
+5. Change directory to the path where the main.py is stored (folder + tamplate should be in an input folder, there should be a output folder aswell - depends on the configurations)
+6. Execute main.py with the command: python main.py
+7. Follow the script flow. Either "skip" input if input.yaml is filled properly (skip to step 9.) or start the input manually with "enter"
+8. Put in the input as requested by the script
+9. Let the program handle the rest.
+10. Check output for mistakes.
+11. Done.
+12. Go Again from the start every reporting cycle (of course change the input before executing the new report)
 
 
+# Input
+.......
+
+
+# Output
+.......
+
+# Timesavings
+........
+   
+   
 
