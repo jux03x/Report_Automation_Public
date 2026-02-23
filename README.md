@@ -7,7 +7,7 @@ From a cybersecurity perspective, the repository is safe to pull: the code conta
 
 Not that I would ever intentionally do something like this, but this approach makes the repository appear more trustworthy overall. 😊
 
-# -------------------------- How-To-Use, with the previously mentioned use case ----------------------------------
+-------------------------- How-To-Use, with the previously mentioned use case ----------------------------------
 
 # Getting Started
 
