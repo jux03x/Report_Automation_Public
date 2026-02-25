@@ -20,8 +20,8 @@ Report_Automation_Public/
 │   ├── base.py             # Base class for single-column sheet logic
 │   ├── base2.py            # Base class for double-column sheet logic
 │   ├── count_size.py       # Sheet processor: document count & size
-│   ├── dashboard.py        # Sheet processor: dashboard / service report
-│   └── system_availability.py  # Sheet processor: service availability
+│   ├── dashboard.py        # Sheet processor: dashboard 
+│   └── system_availability.py  # Sheet processor: availability
 │
 ├── utils/
 │   ├── common_decorater.py # Reusable decorators (e.g. logging, timing)
