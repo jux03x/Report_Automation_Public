@@ -8,9 +8,34 @@ From a cybersecurity perspective, the repository is safe to clone: the code cont
 Not that I would ever intentionally do something like this, but this approach makes the repository appear more trustworthy overall. 😊
 
 # Code Structure
-......
+```
+Report_Automation_Public/
+│
+├── core/
+│   ├── interface.py        # Abstract base interface for sheet processors
+│   └── loader.py           # Loads and copies the template workbook
+│
+├── sheets/
+│   ├── base.py             # Base class for single-column sheet logic
+│   ├── base2.py            # Base class for double-column sheet logic
+│   ├── count_size.py       # Sheet processor: document count & size
+│   ├── dashboard.py        # Sheet processor: dashboard / service report
+│   └── system_availability.py  # Sheet processor: service availability
+│
+├── utils/
+│   ├── common_decorater.py # Reusable decorators (e.g. logging, timing)
+│   └── dates.py            # Date formatting helpers
+│
+├── input_template/         # Folder for the Excel template file
+├── output/                 # Folder for generated report files
+│
+├── config.yaml             # Sheet configurations (rows, columns, names)
+├── input.yaml              # Report input values (dates, counts, downtime)
+├── input.py                # CLI input collection script
+└── main.py                 # Entry point – orchestrates the full pipeline
+```
 
--------------------------- How-To-Use, with the previously mentioned use case ----------------------------------
+---
 
 # Getting Started
 
@@ -32,13 +57,19 @@ Not that I would ever intentionally do something like this, but this approach ma
 
 4. Open command line/ Power Shell
 5. Change directory to the path where the main.py is stored (folder + tamplate should be in an input folder, there should be a output folder aswell - depends on the configurations)
-6. Execute main.py with the command: python main.py
-7. Follow the script flow. Either "skip" input if input.yaml is filled properly (skip to step 9.) or start the input manually with "enter"
-8. Put in the input as requested by the script
-9. Let the program handle the rest.
-10. Check output for mistakes.
-11. Done.
-12. Go Again from the start every reporting cycle (of course change the input before executing the new report)
+   ```bash
+   cd C:\path\to\your\Report_Automation_Public
+   ```
+7. Execute 'main.py" with the command:
+   ```bash
+   python main.py
+   ```
+9. Follow the script flow. Either "skip" input if input.yaml is filled properly (skip to step 9.) or start the input manually with "enter"
+10. Put in the input as requested by the script
+11. Let the program handle the rest.
+12. Check output for mistakes.
+13. Done.
+14. Go Again from the start every reporting cycle (of course change the input before executing the new report)
 
 
 # Input
