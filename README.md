@@ -68,18 +68,22 @@ Report_Automation_Public/
    python main.py
    ```
 
-7. Follow the script flow. Either type `skip` if `input.yaml` is already filled correctly (jump to step 9), or press `Enter` to start the input manually.
+7. Follow the script flow. Either type `skip` if `input.yaml` is already filled correctly (jump to step 10), or press `Enter` to start the input manually.
 
+<img width="1315" height="361" alt="Screenshot 2026-02-25 100302" src="https://github.com/user-attachments/assets/d5cb18dd-6e1e-4cee-9652-08411a434561" />
 
-8. Enter the input values as requested by the script.
+9. Enter the input values as requested by the script.
+<img width="1100" height="886" alt="Screenshot 2026-02-25 100748" src="https://github.com/user-attachments/assets/2370599b-e1f7-4ad8-b877-0ae3f77fcb46" />
 
-9. Let the program handle the rest.
+11. Let the program handle the rest.
 
-10. Check the output folder for mistakes.
+12. Check the output folder for mistakes.
 
-11. Done.
+13. Done.
 
-12. Repeat from the start every reporting cycle (update the input before each new run).
+14. Repeat from the start every reporting cycle (update the input before each new run).
+
+!! Keep in mind if you cunduct manuall changes in the file, due to formatting difrences, the next automation may not work anymore. !! 
 
 
 # Input
