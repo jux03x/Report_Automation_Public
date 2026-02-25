@@ -1,3 +1,4 @@
 #Files to be ignored
 /input_template/*.xlsx
 /output/*.xlsx
+input.yaml
