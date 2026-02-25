@@ -86,12 +86,35 @@ Report_Automation_Public/
 !! Keep in mind if you cunduct manuall changes in the file, due to formatting difrences, the next automation may not work anymore. !! 
 
 
-# Input
-.......
+# Input & Output
+Jan >>> Feb
+
+dashboard
+
+<img width="254" height="152,8" alt="image" src="https://github.com/user-attachments/assets/9256f817-2bdd-4536-8163-e87708c745cb" />  --> <img width="251" height="154" alt="image" src="https://github.com/user-attachments/assets/37c783a1-27d2-40c3-83d3-c2eeaf838846" />
+
+system availability
+
+<img width="314,2" height="110" alt="image" src="https://github.com/user-attachments/assets/dfc5c86d-d313-4888-ac9c-6edf9d89647f" /> --> <img width="320" height="110,6" alt="image" src="https://github.com/user-attachments/assets/4e3d97d9-b9c3-481d-b70a-849dd4f635f5" />
+
+count_size
+
+<img width="299,2" height="73,8" alt="image" src="https://github.com/user-attachments/assets/2310657e-6965-4e64-91ab-c4b875c6c958" /> --> <img width="310,2" height="75,4" alt="image" src="https://github.com/user-attachments/assets/694f05b2-0eff-4507-b7da-26c19a469d09" />
 
 
-# Output
-.......
+Preview Feb >> Mar
+Template_Feb26.xlsx is in the input directory now:
+
+<img width="198,2" height="59,6" alt="image" src="https://github.com/user-attachments/assets/d262c5c3-ba54-45e4-8796-92fbd1dbf329" />
+
+dashboard
+
+<img width="251" height="154" alt="image" src="https://github.com/user-attachments/assets/37c783a1-27d2-40c3-83d3-c2eeaf838846" /> --> <img width="238,2" height="152,8" alt="image" src="https://github.com/user-attachments/assets/0a45d7b7-868a-458b-89b5-427b3c454325" />
+
 
 # Timesavings
-........
+The saved time depends on the complexity of the report. In this case you would save around 20 min per report per month. If you have 10 simalar reports you would safe 200 min per month and 40 h in a year.
+
+In one productive usecase this saves me around 2 hours per month. 
+
+Downside is, the more diffrent the reports are the higher is the configuration time.
