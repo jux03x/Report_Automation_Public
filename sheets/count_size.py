@@ -102,8 +102,8 @@ class CountSize(SheetProcessor):
         src = ws.cell(row=9, column=new_col).value
 
         if isinstance(src, str) and src.startswith("="):
-            ws.cell(row=cfg["last_row"], column=new_col).value = change_formula(src)
+            ws.cell(row=9, column=new_col).value = change_formula(src)
         else:
-            ws.cell(row=cfg["last_row"], column=new_col).value = src
+            ws.cell(row=9, column=new_col).value = src
 
 
