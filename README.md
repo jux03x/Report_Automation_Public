@@ -70,6 +70,7 @@ Report_Automation_Public/
 
 7. Follow the script flow. Either type `skip` if `input.yaml` is already filled correctly (jump to step 9), or press `Enter` to start the input manually.
 
+
 8. Enter the input values as requested by the script.
 
 9. Let the program handle the rest.
