@@ -1,37 +1,7 @@
 from sheets.base import BaseSheet
 from core.interfaces import SheetProcessor
 from openpyxl.styles import Alignment
-import re
-
-# The excel columns A or B getting convertet into numbers
-def excel_col_to_number(col: str) -> int:
-    num = 0
-    for c in col:
-        num = num * 26 + (ord(c) - ord("A") + 1)
-    return num
-
-# Changes the Numbers back into excel columns 
-def number_to_excel_col(n: int) -> str:
-    result = ""
-    while n > 0:
-        n, r = divmod(n - 1, 26)
-        result = chr(r + ord("A")) + result
-    return result
-
-# Increases the Excel column by one
-def next_column(col: str) -> str:
-    return number_to_excel_col(excel_col_to_number(col) + 1)
-
-# Reads an existing formula and increases the columns by one: =SUMME(AY7:AY11)  -> =SUMME(AZ7:AZ11)
-def change_formula(formula: str) -> str:
-
-    def repl(match):
-        return next_column(match.group(1))
-    
-    #Pattern so the formal operater doesnt get interpreted as column
-    pattern = r"([A-Z]+)(?=\d)"
-
-    return re.sub(pattern, repl, formula)
+import sheets.formula
 
 class CountSize(SheetProcessor):
 
@@ -102,7 +72,7 @@ class CountSize(SheetProcessor):
         src = ws.cell(row=9, column=new_col).value
 
         if isinstance(src, str) and src.startswith("="):
-            ws.cell(row=9, column=new_col).value = change_formula(src)
+            ws.cell(row=9, column=new_col).value = sheets.formula.change_formula(src)
         else:
             ws.cell(row=9, column=new_col).value = src
 

@@ -2,52 +2,8 @@ from sheets.base2 import BaseSheet2
 from core.interfaces import SheetProcessor
 from openpyxl.styles import Alignment, Side, Border 
 from utils.dates import format_month_label_german
-import re
+import sheets.formula
 import copy
-
-# The excel columns A or B getting converted into numbers
-def excel_col_to_number(col: str) -> int:
-    num = 0
-    for c in col:
-        num = num * 26 + (ord(c) - ord("A") + 1)
-    return num
-
-# Changes the Numbers back into excel columns 
-def number_to_excel_col(n: int) -> str:
-    result = ""
-    while n > 0:
-        n, r = divmod(n - 1, 26)
-        result = chr(r + ord("A")) + result
-    return result
-
-# Increases the Excel column by one
-def next_column(col: str) -> str:
-    return number_to_excel_col(excel_col_to_number(col) + 1)
-
-# Increases the Excel column by two
-def next_two_columns(col: str) -> str:
-    return number_to_excel_col(excel_col_to_number(col) + 2)
-
-# Reads an existing formula and increases the columns by one: =Service_Availability!AL27 -> =Service_Availability!AM27
-def change_formula_one_column(formula: str) -> str:
-    def repl(match):
-        return next_column(match.group(1))
-    
-    # Pattern so the formula operator doesn't get interpreted as column
-    pattern = r"([A-Z]+)(?=\d)"
-    
-    return re.sub(pattern, repl, formula)
-
-# Reads an existing formula and increases the columns by two: =Volume_Report!CB12 -> =Volume_Report!CD12
-def change_formula_two_columns(formula: str) -> str:
-    def repl(match):
-        return next_two_columns(match.group(1))
-    
-    # Pattern so the formula operator doesn't get interpreted as column
-    pattern = r"([A-Z]+)(?=\d)"
-    
-    return re.sub(pattern, repl, formula)
-
 
 class Dashboard(SheetProcessor):
 
@@ -91,7 +47,7 @@ class Dashboard(SheetProcessor):
         for row in table1_cfg["formula_rows"]:
             src = ws.cell(row=row, column=new_col).value
             if isinstance(src, str) and src.startswith("="):
-                ws.cell(row=row, column=new_col).value = change_formula_one_column(src)
+                ws.cell(row=row, column=new_col).value = sheets.formula.change_formula(src)
 
         # Then: Handle year row (unmerge, shift, write, merge)
         self._handle_year_row(ws, table1_cfg, cfg["start_column"], cfg["end_column"])
@@ -118,7 +74,7 @@ class Dashboard(SheetProcessor):
         for row in table2_cfg["formula_rows"]:
             src = ws.cell(row=row, column=new_col).value
             if isinstance(src, str) and src.startswith("="):
-                ws.cell(row=row, column=new_col).value = change_formula_one_column(src)
+                ws.cell(row=row, column=new_col).value = sheets.formula.change_formula(src)
 
         # Then: Handle year row (unmerge, shift, write, merge)
         self._handle_year_row(ws, table2_cfg, cfg["start_column"], cfg["end_column"])
