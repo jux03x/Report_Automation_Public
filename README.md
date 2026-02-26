@@ -22,6 +22,7 @@ Report_Automation_Public/
 │   ├── count_size.py       # Sheet processor: document count & size
 │   ├── dashboard.py        # Sheet processor: dashboard 
 │   └── system_availability.py  # Sheet processor: availability
+│   └── formula.py  # formula processor: Alters the formula by shifting 1 or 2 columns
 │
 ├── utils/
 │   ├── common_decorater.py # Reusable decorators (e.g. logging, timing)
